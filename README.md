@@ -16,8 +16,8 @@ This sample repo is intended to help users getting started using Babylon React N
 You can download source code archives from [GitHub](https://github.com/SergioRZMasson/BabylonReactNative-GetStarted) or use ```git``` to clone the repository.
 
 ```
-> git clone https://github.com/SergioRZMasson/BabylonReactNative-GetStarted.git
-Cloning into 'BabylonReactNative-GetStarted'...
+> git clone https://github.com/SergioRZMasson/BabylonReactNative-ReactNative0.64-Bugbash.git
+Cloning into 'BabylonReactNative-ReactNative0.64-Bugbash'...
 ```
 
 ## 2. Project setup
@@ -25,7 +25,7 @@ Cloning into 'BabylonReactNative-GetStarted'...
 From your projects folder restore the npm packages by running:
 
 ```
-cd BabylonReactNative-GetStarted
+cd BabylonReactNative-ReactNative0.64-Bugbash
 npm install
 ```
 
