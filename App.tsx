@@ -5,11 +5,13 @@
  * @format
  */
 
-import React, { useState, FunctionComponent, useEffect } from 'react';
-import { SafeAreaView, StatusBar, View, ViewProps } from 'react-native';
-import { EngineView, useEngine } from '@babylonjs/react-native';
-import { Scene, Camera, SceneLoader, ArcRotateCamera } from '@babylonjs/core';
-import '@babylonjs/loaders';
+import React, { useState, FunctionComponent, useEffect } from "react";
+import { SafeAreaView, StatusBar, View, ViewProps } from "react-native";
+import { EngineView, useEngine } from "@babylonjs/react-native";
+import { SceneLoader } from "@babylonjs/core/Loading/sceneLoader";
+import { Camera } from "@babylonjs/core/Cameras/camera";
+import { ArcRotateCamera } from "@babylonjs/core/Cameras/arcRotateCamera";
+import "@babylonjs/loaders/glTF";
 
 const EngineScreen: FunctionComponent<ViewProps> = (props: ViewProps) => {
   const engine = useEngine();
@@ -17,8 +19,8 @@ const EngineScreen: FunctionComponent<ViewProps> = (props: ViewProps) => {
 
   useEffect(() => {
     if (engine) {
-      const scene = new Scene(engine);
-      SceneLoader.ImportMeshAsync('', 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/BoxAnimated/glTF/BoxAnimated.gltf').then(() => {
+      const url = "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/BoxAnimated/glTF/BoxAnimated.gltf";
+      SceneLoader.LoadAsync(url, undefined, engine).then((scene) => {
         scene.createDefaultCameraOrLight(true, undefined, true);
         (scene.activeCamera as ArcRotateCamera).alpha += Math.PI;
         (scene.activeCamera as ArcRotateCamera).radius = 10;
@@ -42,7 +44,7 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
         <EngineScreen style={{ flex: 1 }} />
       </SafeAreaView>
     </>
