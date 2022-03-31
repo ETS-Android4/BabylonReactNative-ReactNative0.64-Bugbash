@@ -12,8 +12,8 @@
   "dependencies": {
     "@babylonjs/core": "^5.0.0",
     "@babylonjs/loaders": "^5.0.0",
-    "@babylonjs/react-native": "^1.0.0-preview.2",
-    "@babylonjs/react-native-iosandroid-0-64": "^1.0.0-preview.2",
+    "@babylonjs/react-native": "^1.0.1",
+    "@babylonjs/react-native-iosandroid-0-64": "^1.0.1",
     "react": "17.0.1",
     "react-native": "0.64.3"
   },
